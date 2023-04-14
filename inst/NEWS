@@ -7,3 +7,5 @@ Bugfixes mainly in function sfpmean: affects input data sets, where technical re
 ver 1.9.1 2017/02/10
 Bugfixes in functions pes, sfpmean and plot.cellsurvLQfit: calculation of mean values at different doses for curve and point plotting when PEmethod = "fix"
 
+ver 2.0.0 2023/04/15
+Added function "plotPara" to help re-map figures in ggplot2
