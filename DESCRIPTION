@@ -1,14 +1,14 @@
 Package: CFAssay
 Type: Package
 Title: Statistical analysis for the Colony Formation Assay
-Version: 1.21.1
-Date: 2019-11-18
+Version: 1.21.2
+Date: 2023-4-14
 Author: Herbert Braselmann
 Maintainer: Herbert Braselmann <braselm@helmholtz-muenchen.de>
 Depends: R (>= 2.10.0)
 Description: The package provides functions for calculation of
         linear-quadratic cell survival curves and for ANOVA of
         experimental 2-way designs along with the colony formation
-        assay.
+        assay. Remodified using ggplot2.
 License: LGPL
 biocViews: CellBasedAssays, CellBiology, ImmunoOncology, Regression, Survival
