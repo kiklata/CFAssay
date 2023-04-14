@@ -1,7 +1,7 @@
 Package: CFAssay
 Type: Package
 Title: Statistical analysis for the Colony Formation Assay
-Version: 1.21.2
+Version: 2.0.0
 Date: 2023-4-14
 Author: Herbert Braselmann
 Maintainer: Herbert Braselmann <braselm@helmholtz-muenchen.de>
