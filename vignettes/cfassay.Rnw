@@ -119,43 +119,6 @@ The procedure is repeated for the other cell line, "cal33". The result is not sh
   plotExp(fit)
 @
 
-Now can use function {\\tt plotPara} to calculate revelant parameters for ggplot. Modified funcition {\tt equa} can be used for calculating SER10%.
-<<eval=FALSE, echo=TRUE>>=
-  para = plotPara(fit)
-  ## para$pd is data for geom_point and geom_errorbar, para$dose is α and β parameters.
-  ggplot(para$pd, aes(x = x, y = st)) +
-  geom_function(fun = equa, colour = "black") +
-  geom_point(aes(x = x, y = st, fill = treat), shape = 18, size = 3) +
-  geom_errorbar(
-    aes(ymin = st - sd, ymax = st + sd),
-    width = 0.05,
-    linewidth = 0.8,
-    color = "black",
-    position = "identity"
-  ) + theme_prism() +
-  scale_y_continuous(
-    trans = 'log10',
-    guide = 'prism_minor',
-    limits = c(0.0002, 2),
-    breaks = c(0.001, 0.01, 0.1, 1),
-    minor_breaks = as.numeric(1:10 %o% 10 ^ -(1:10)),
-    labels = c('0.001', '0.01', '0.1', '1')
-  ) +
-  guides(fill = guide_legend(
-    title = "",
-    label.position = "right",
-    nrow = 1
-  )) +
-  theme(
-    legend.position = "bottom",
-    axis.line = element_line(color = 'black', linetype = 1),
-    axis.text.x = element_text(color = "black", size = 10),
-    axis.text.y = element_text(color = "black", size = 10)
-  ) +
-  xlab("Radiation dose (Gy)") +
-  ylab("Surviving fraction")
-@
-
 \subsection{Comparison of the two cell survival curves}
 The two linear-quadratic cell survival curves are compared with the CFAssay function {\tt cellsurvLQdiff}. The required argument {\tt curvevar} is set to {\tt "cline"}, which is the name of the column in {\tt datatab} which distinguishes the two curves to be compared. The function uses an ANOVA test for comparison of two model fits. In "Model 1", which corresponds to the Null-hypothesis, the dose coefficient (alpha) and the dose-squared coefficient (beta) are independent of the two curves. In "Model 2" the coefficients are different. Detailed results are printed with function {\tt print}.
 <<eval=TRUE, echo=TRUE>>=
