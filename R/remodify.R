@@ -25,8 +25,3 @@ plotPara <- function (x,group = 'DMSO')
   
   return(para)
 }
-
-equa = function(para,x){
-  y = exp(para$rad_p[1] * x + para$rad_p[2] * x^2)
-  return(y)
-}
